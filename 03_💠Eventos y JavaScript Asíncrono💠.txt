@@ -1,0 +1,198 @@
+💠Eventos en Node.js y JavaScript Asíncrono💠
+.............................................
+
+¿Qué es un EVENTO?
+------------------
+
+Es una acción que se realiza en la aplicación.
+
+Nota🗒️: También podemos definir eventos que se desencadenen y ejecuten internamente en el servidor.
+
+¿Qué son los Emitters(Emisores)?
+--------------------------------
+
+Son objetos que emiten eventos nombrados y llaman a funciones específicas cuando ocurren.
+
+Nota1🗒️: Los emitters son instancias de la clase EventEmitter.
+Nota2🗒️: Tienen un método .on() para asociar una función al evento. Esa función se ejecuta cuando ocurre el evento y se denomina "Event Handler"(Maneja el evento).
+
+Módulo Events
+-------------
+
+El módulo events nos permite:
+🟢Definir.
+🟢Emitir.
+🟢Escuchar.
+
+Promesas en JavaScript
+----------------------
+
+¿Qué es una PROMESA(PROMISE)?
+-----------------------------
+
+Se define como un objeto que representa el eventual resultado(O error) de una operación asíncrona.
+
+Nota1🗒️: Una promesa es un objeto de JavaScript.
+Nota2🗒️: Ese objeto se asocia a una callback function(Función callback).
+
+¿Es una FUNCIÓN CALLBACK(CALLBACK FUNCTION)?
+--------------------------------------------
+
+Es una función que se pasa a otra función como argumento y luego se ejecuta dentro de la función externa.
+
+Nota🗒️: Las promesas tienen un método .then(), con el cual podemos decidir qué occure cuando se completa la promesa(Éxito o error).
+
+Método .catch()
+---------------
+
+¿Qué es método .catch()?
+------------------------
+
+Es un método de promesa que solo se ejecuta si la promesa es rechazada.
+
+Comparación de Código entre .then() y .catch()
+----------------------------------------------
+
+miPedidoDePizza
+ .then(null, (mensajeDeError) => {
+   console.log(mensajeDeError);
+ });
+
+ .catch((mensajeDeError) => {
+   console.log(mensajeDeError);
+ });
+
+Nota🗒️: Cuando unimos dos métodos se determina "Method Chaining(Encadenamiento de Métodos)".
+
+Encadenar Promesas y async await
+--------------------------------
+
+¿Qué es async(asynchronous/Asíncrono)?
+-------------------------
+
+`async` es una palabra clave en JavaScript que se utiliza para declarar una función como asíncrona.
+
+Nota🗒️: Permite que la función retorne una promesa automáticamente.
+
+¿Qué es await(Esperar)?
+-----------------------
+
+await es una palabra clave en JavaScript que se utiliza dentro de funciones async para esperar a que una promesa se resuelva y devolver su resultado.
+
+Nota1🗒️: Hace que el código asíncrono se comporte de manera síncrona.
+Nota2🗒️: Cuando unimos dos promesas se determina "Chaining Promises(Encadenamiento de Promesas)".
+
+Ej:
+
+// async y await
+// -------------
+// async sin el await
+// 🟥🟥🟥🟥🟥🟥🟥
+
+function ordernarProducto(producto) {
+  return new Promise((resolve, reject) => {
+    console.log(`Ordenando: ${producto} de freeCodeCamp.`);
+    setTimeout(() => {
+      if (producto === "taza") {
+        resolve("Ordenando una taza con el logo de freeCodeCamp...");
+      } else {
+        reject("Este producto no está disponible actualmente.");
+      }
+    }, 2000);
+  });
+}
+
+function procesarPedido(respuesta) {
+  return new Promise((resolve) => {
+    console.log("Procesando respuesta...");
+    console.log(`La respuesta fue: "${respuesta}"`);
+    setTimeout(() => {
+      resolve("Gracias por tu compra. Disfruta tu producto de freeCodeCamp.");
+    }, 4000);
+  });
+}
+
+//🟥🟥🟥🟥🟥🟥🟥
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    const respuestaProcesada = procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); 
+
+//async con el await
+//🟩🟩🟩🟩🟩🟩🟩
+
+function ordernarProducto(producto) {
+  return new Promise((resolve, reject) => {
+    console.log(`Ordenando: ${producto} de freeCodeCamp.`);
+    setTimeout(() => {
+      if (producto === "taza") {
+        resolve("Ordenando una taza con el logo de freeCodeCamp...");
+      } else {
+        reject("Este producto no está disponible actualmente.");
+      }
+    }, 2000);
+  });
+}
+
+function procesarPedido(respuesta) {
+  return new Promise((resolve) => {
+    console.log("Procesando respuesta...");
+    console.log(`La respuesta fue: "${respuesta}"`);
+    setTimeout(() => {
+      resolve("Gracias por tu compra. Disfruta tu producto de freeCodeCamp.");
+    }, 4000);
+  });
+}
+
+//🟩🟩🟩🟩🟩🟩🟩
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = await ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    console.log(respuesta);
+    const respuestaProcesada = await procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); 
+
+try y catch
+-----------
+
+¿Qué es try(Intentar) y catch(Atrapar)?
+---------------------------------------
+
+try y catch son bloques de código en JavaScript que se utilizan para manejar errores de manera controlada.
+
+⚫try: Este bloque contiene el código que se desea ejecutar y que podría lanzar una excepción. Se utiliza para envolver el código que podría generar un error.
+⚫catch: Este bloque se ejecuta si se produce una excepción dentro del bloque try. Se utiliza para manejar el error y proporcionar una respuesta o solución al problema que ocurrió dentro del bloque try.
+
+Ej:
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = await ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    console.log(respuesta);
+    const respuestaProcesada = await procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); // Entra al bloque try
+realizarPedido("lapiz"); // Entra al bloque catch

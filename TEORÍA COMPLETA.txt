@@ -1,0 +1,1391 @@
+Node.js
+
+💠Introducción💠
+................
+
+¿Qué es NODEJS?
+---------------
+
+Entorno de ejecución de JavaScript orientado a eventos asíncronos.
+
+¿Qué es un ENTORNO DE EJECUCIÓN?
+--------------------------------
+
+Entorno(infraestructura) en el cual se ejecuta un programa o aplicación.
+
+¿Qué es un EVENTO ASÍNCRONO?
+----------------------------
+
+Evento que se ejecuta independientemente del proceso principal de la aplicación.
+
+Ej: Obtener información de una base de datos.
+
+¿Qué es un EVENTO SÍNCRONO?
+---------------------------
+
+Evento que se ejecuta como parte del proceso principal de la aplicación.
+
+Características de NODEJS
+-------------------------
+
+🟢Open-Source(Código abierto).
+🟢Multiplataforma.
+🟢Basado en el motor V8 de Google.
+
+¿Qué es el MOTOR V8?
+--------------------
+
+Motor de JavaScript desarrollado por el Chromium Project para Google Chrome.
+
+¿Qué es un MOTOR DE JAVASCRIPT?
+-------------------------------
+
+Software que ejecuta código de JavaScript.
+
+CONCEPTOS BÁSICOS
+.................
+
+Arquitectura cliente-servidor
+-----------------------------
+
+Modelo en el cual el servidor envía recursos al dispositivo que lo solicita(cliente).
+
+Desarrollo front-end
+--------------------
+
+Es un área del desarrollo web que se encarga del desarrollo de los componentes que ve el usuario y con los cuales interactúa.
+
+Desarrollo back-end
+-------------------
+
+Es un área del desarrollo web que se encarga del desarrollo de los servidores y bases de datos.
+
+Protocolo
+---------
+
+Reglas que permiten que dos entiedades de una red se comuniquen.
+
+Ej: Protocolo HTTP
+
+Base de Datos
+-------------
+
+Conjunto de datos estructurados sobre un mismo contexto que se pueden consultar.
+
+Página Web Estática y Dinámica
+------------------------------
+
+Estáticas: muestran contenido fijo sin cambios, ideales para información estática . Ej: Portfolios.
+Dinámicas: se generan en tiempo real, adaptándose a la interacción del usuario. Ej: tiendas en línea o redes sociales.
+
+Conceptos
+---------
+
+🟢Arquitectura cliente-servidor
+🟢Desarrollo front-end y back-end
+🟢Protocolo
+🟢Base de Datos
+🟢Página Web Estática y Dinámica
+
+Aplicaciones de Node.js
+-----------------------
+
+Node.js es usado para:
+⚫Desarrollo back-end
+⚫Desarrollar APIs
+
+//API(Application Programming Inferface/Interfaz de Programación de Aplicaciones)
+
+Node.js permite desarrollar aplicaciones escalables(Scalable) y de tiempo real(Real-Time).
+
+Escalable
+---------
+
+Su rendimiento se puede adaptar a medida que crece el uso de la aplicación y recibe más solicitudes.
+
+Aplicación en Tiempo Real
+-------------------------
+
+Establece una conexión bidireccional y dinámica entre el servidor y el cliente. Analiza los eventos que ocurren y reacciona de forma casi inmediata.
+
+Node.js NO es:
+🟢Lenguaje de programación
+🟢Framework
+🟢Librería(Biblioteca)
+
+Node.js es:
+Un entorno de ejecución
+
+Node.js ejecuta: JavaScript
+
+💠Módulo en Node.js y el Primer Programa💠
+..........................................
+
+¿Qué es un MÓDULO?
+------------------
+
+Funcionalidad organizada en uno o varios archivos JavaScript que puede ser reutilizada en una aplicación.
+
+VENTAJAS
+--------
+
+🟢Evitar repetición del código.
+🟢Reutilizar el código.
+🟢Es más fácil encontrar y corregir "bugs".
+🟢Es más fácil modificar el código.
+🟢Es más fácil agregar nueva funcionalidad.
+
+Importar(un módulo)
+-------------------
+
+Darle acceso a funciones y elementos definidos en otro módulo.
+
+Nota: Para importar un elemento a un módulo debemos exportarlo desde otro módulo.
+
+Módulos Principales de Node.js
+..............................
+
+Módulos Built-in
+----------------
+
+¿Qué es un MÓDULO BUILT-IN(INCORPORADOS)?
+-----------------------------------------
+
+Módulos que puedes usar directamente al trabajo con Node.js(sin instalarlos). Muy útiles para realizar tareas comunes al trabajar con Node.js. Algunos son:
+🟢http
+🟢https
+🟢fs(file system)
+🟢os(operating system)
+🟢path
+
+MUCHOS MÁS...
+
+Módulo Console
+--------------
+
+¿Qué es CONSOLE?
+----------------
+
+Módulo built-in que implementa funcionalidad similar a la consola de un navegador web.
+
+Métodos Útiles
+--------------
+
+🟢console.log()
+🟢console.warn()
+🟢console.error()
+🟢console.assert()
+🟢console.table()
+
+Módulo Process
+--------------
+
+¿Qué es MÓDULO PROCESS?
+-----------------------
+
+Provee imformación sobre el proceso de Node.js que se está ejecutando. También puede tener cierto control sobre el proceso.
+
+Módulo OS(Operating System/Operación del Sistema)
+-------------------------------------------------
+
+Contiene funcionalidad para obtener información sobre el sistema operativo en el cual se ejecuta la aplicación.
+
+Módulo Timers
+-------------
+
+Timer: Temporizador
+
+Contiene funciones que ejecutan código luego de un cierto periodo de tiempo.
+
+Funciones Útiles
+----------------
+
+🟢setTimeout()
+🟢setImmediate()
+🟢setInterval()
+
+setTimeout()
+------------
+
+Es una función para ejecutar código luego de un número específico de milisegundos(1 segundo = 1000 milisegundos).
+Ej: setTimeout(funcion, retraso, argumento);
+Ej2: setTimeout(funcion, retraso, argumento1, argumento2);
+
+Higher-Order-Programming(Programación de Orden Superior)
+--------------------------------------------------------
+
+Es un estilo de programación informática que utiliza componentes de software, como funciones, módulos u objetos, como valores.
+
+setImmediate()
+--------------
+
+Es una función para ejecutar código asíncrono en la próxima iteración del ciclo de eventos(lo más pronto posible).
+Ej: setImmediate(funcion, argumento1, argumento2);
+
+Nota1🗒️: Se ejecuta después del código síncrono.
+Nota2🗒️: Se ejecuta lo más rápido posible de forma asíncrona.
+
+setInterval()
+-------------
+
+Es una función para ejecutar código un infinito de veces con un retraso específico de milisegundos.
+Ej: setInterval(funcion, intervalo, arg1, arg2);
+
+Módulo fs(File System/Sistema de Archivos)
+------------------------------------------
+
+Módulo que contiene funcionalidad muy útil para trabajar con el sistema de archivos. 
+
+Operaciones Útiles
+------------------
+
+🟢Leer                     |
+🟢Modificar                |			
+🟢Copiar                   | Archivo
+🟢Eliminar                 |
+🟢Cambiar nombre           |
+
+Nota🗒️: Todos los métodos de este módulo son asíncronos por defecto. Pero puedes escoger versiones síncronas de estos métodos, agregando Sync(Synchronous) a sus nombres.
+
+Diferencias entre Asíncrono y Síncrono del Módulo fs
+----------------------------------------------------
+
+⚫ fs.rename() //Asíncrono
+⚫ fs.renameSync() //Síncrono
+
+Archivo de prueba📁:
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js</title>
+</head>
+
+<body>
+    <h1>freeCodeCamp</h1>
+    <p>Estoy aprendiendo Node.js</p>
+</body>
+
+</html><!--<p>Hola</p>-->
+
+<!--Nueva etiquta-->
+<p>Hola</p>
+
+💠npm y el formato JSON💠
+.........................
+
+Introducción a npm
+------------------
+
+¿Qué es npm?
+------------
+
+Es el archivo de software más grande del mundo que contiene paquetes que puedes instalar y usar con Node.js.
+
+Nota🗒️: También es una herramienta para la línea de comandos.
+
+¿Qué es un Paquete?
+-------------------
+
+Archivo o directorio descrito por un archivo packege.json. Puede ser publicado en el registro de npm.
+
+¿Qué es Módulo?
+---------------
+
+Es cualquier archivo o directorio en el directorio node_modules que puede ser importado con require().
+
+Nota1🗒️: Para poder incluir un módulo con require(), debe ser un archivo JS. Una carpeta con un archivo package.json que contiene un propiedad "main".
+Nota2🗒️: Solo los módulos que tienen un archivo package.json son paquetes.
+
+¿Qué es una Dependencia?
+
+Es un paquete que otro paquete necesita para que pueda funcionar correctamente.
+
+Crear paquete con npm con init(initialize)
+------------------------------------------
+
+✖️comandos✖️: 
+  ⚫npm init: Creas y configuras tu package.json.
+  ⚫npm init --yes: Creas directamente tu package.json por defecto.
+
+Introducción al formato JSON(JavaSript Object Notation)
+-------------------------------------------------------
+
+¿Qué es JSON?
+-------------
+
+Es un formato de texto usado para almacenar y transportar información.
+
+Nota1🗒️: JSON está basado en la notación de objetos de JavaScript pero es solo texto.
+Nota2🗒️: Nos permite almacenar objetos de JavaScript como texto.
+Nota3🗒️: Es independiente del lenguaje de programación con el cual estás trabajando.
+
+
+Características del Formato JSON
+--------------------------------
+
+🟢Los datos se representan como pares clave-valor(propiedades).
+
+{
+  "titulo": "Aprende Node.js",
+  "numVistas": 45642,
+  "numLikes": 21123,
+  "temas": [
+    "JavaScript",
+    "Node.js"
+  ],
+  "esPublico": true
+}
+
+🟢Están rodeados por dos llaves principales {}.
+
+Nota🗒️: También puede estar rodeado por [], si es un arreglo JSON.
+
+🟢Los pares deben estar separados por un coma ,.
+
+🟢Puede contener:
+  🟢Cadenas de caracteres.
+  🟢Números.
+  🟢Arreglos(arrays).
+  🟢Valores Booleanos(true/false).
+  🟢Objetos.
+
+✖️Síntaxis✖️
+  ⚫JSON.parse(): Convierte una cadena de texto JSON en un objeto JavaScript.
+  ⚫JSON.stringify: Convierte un objeto JavaScript en una cadena de texto JSON.
+  
+  Nota🗒️: Esto es útil para serializar datos y enviarlos a través de una red o almacenarlos en un archivo.
+
+Instalar y Desinstalar Paquetes con npm
+---------------------------------------
+
+✖️comandos✖️: 
+ ⚫npm install express : Instala los módulos de express en tu carpeta.
+ ⚫npm uninstall express : Desinstala los módulos de express en tu carpeta.
+
+Nota🗒️: Para instalar dependencias: npm install(todas las dependencias)
+
+Instalar cualquier versión de express
+-------------------------------------
+ 
+ Para instalar una versión específica de Express, debemos usar la sintaxis npm install express@4.15.1, donde @4.15.1 indica la versión que deseamos instalar.
+Ej: npm install express@4.15.1
+
+Nota🗒️: Esto asegura que npm instale la versión exacta especificada del paquete.
+
+devDependencies en el package.json
+----------------------------------
+
+Para agregar una dependencia como una dependencia de desarrollo en el archivo package.json, usamos el comando:
+
+✖️comando✖️: npm install express --save-dev
+
+Nota1🗒️: Este comando instalará la dependencia 'express' y la guardará en la sección 'devDependencies' del archivo package.json. 
+Nota2🗒️: Estas dependencias son necesarias para el desarrollo del proyecto, pero no son necesarias para su funcionamiento en producción.
+
+package-lock.json
+-----------------
+
+Se genera automáticamente cuando npm modifica el árbol de node_modules o package.json.
+
+Nota1🗒️: Describe el árbol generado para que futuras instalaciones puedan generar exactamente el mismo árbol.
+Nota2🗒️: Otros desarrolladores pueden instalar exactamente las mismas dependencias.
+
+🟢name🟢
+--------
+
+El nombre del paquete. Es el mismo nombre que incluimos en package.json.
+
+🟢version🟢
+-----------
+
+La version del paquete. Es la misma versión que incluimos en package.json.
+
+🟢lockfileVersion🟢
+-------------------
+
+Describe la versión del archivo package-lock.json.
+
+🟢require🟢
+-----------
+
+Es una función que se puede usar para importar símbolos desde otro módulo al ámbito actual.
+
+🟢packages🟢
+------------
+
+Es un objeto que asocia la ubicación de cada paquete con un objeto que contiene información sobre ese paquete.
+
+
+💠Eventos en Node.js y JavaScript Asíncrono💠
+.............................................
+
+¿Qué es un EVENTO?
+------------------
+
+Es una acción que se realiza en la aplicación.
+
+Nota🗒️: También podemos definir eventos que se desencadenen y ejecuten internamente en el servidor.
+
+¿Qué son los Emitters(Emisores)?
+--------------------------------
+
+Son objetos que emiten eventos nombrados y llaman a funciones específicas cuando ocurren.
+
+Nota1🗒️: Los emitters son instancias de la clase EventEmitter.
+Nota2🗒️: Tienen un método .on() para asociar una función al evento. Esa función se ejecuta cuando ocurre el evento y se denomina "Event Handler"(Maneja el evento).
+
+Módulo Events
+-------------
+
+El módulo events nos permite:
+🟢Definir.
+🟢Emitir.
+🟢Escuchar.
+
+Promesas en JavaScript
+----------------------
+
+¿Qué es una PROMESA(PROMISE)?
+-----------------------------
+
+Se define como un objeto que representa el eventual resultado(O error) de una operación asíncrona.
+
+Nota1🗒️: Una promesa es un objeto de JavaScript.
+Nota2🗒️: Ese objeto se asocia a una callback function(Función callback).
+
+¿Es una FUNCIÓN CALLBACK(CALLBACK FUNCTION)?
+--------------------------------------------
+
+Es una función que se pasa a otra función como argumento y luego se ejecuta dentro de la función externa.
+
+Nota🗒️: Las promesas tienen un método .then(), con el cual podemos decidir qué occure cuando se completa la promesa(Éxito o error).
+
+Método .catch()
+---------------
+
+¿Qué es método .catch()?
+------------------------
+
+Es un método de promesa que solo se ejecuta si la promesa es rechazada.
+
+Comparación de Código entre .then() y .catch()
+----------------------------------------------
+
+miPedidoDePizza
+ .then(null, (mensajeDeError) => {
+   console.log(mensajeDeError);
+ });
+
+ .catch((mensajeDeError) => {
+   console.log(mensajeDeError);
+ });
+
+Nota🗒️: Cuando unimos dos métodos se determina "Method Chaining(Encadenamiento de Métodos)".
+
+Encadenar Promesas y async await
+--------------------------------
+
+¿Qué es async(asynchronous/Asíncrono)?
+-------------------------
+
+`async` es una palabra clave en JavaScript que se utiliza para declarar una función como asíncrona.
+
+Nota🗒️: Permite que la función retorne una promesa automáticamente.
+
+¿Qué es await(Esperar)?
+-----------------------
+
+await es una palabra clave en JavaScript que se utiliza dentro de funciones async para esperar a que una promesa se resuelva y devolver su resultado.
+
+Nota1🗒️: Hace que el código asíncrono se comporte de manera síncrona.
+Nota2🗒️: Cuando unimos dos promesas se determina "Chaining Promises(Encadenamiento de Promesas)".
+
+Ej:
+
+// async y await
+// -------------
+// async sin el await
+// 🟥🟥🟥🟥🟥🟥🟥
+
+function ordernarProducto(producto) {
+  return new Promise((resolve, reject) => {
+    console.log(`Ordenando: ${producto} de freeCodeCamp.`);
+    setTimeout(() => {
+      if (producto === "taza") {
+        resolve("Ordenando una taza con el logo de freeCodeCamp...");
+      } else {
+        reject("Este producto no está disponible actualmente.");
+      }
+    }, 2000);
+  });
+}
+
+function procesarPedido(respuesta) {
+  return new Promise((resolve) => {
+    console.log("Procesando respuesta...");
+    console.log(`La respuesta fue: "${respuesta}"`);
+    setTimeout(() => {
+      resolve("Gracias por tu compra. Disfruta tu producto de freeCodeCamp.");
+    }, 4000);
+  });
+}
+
+//🟥🟥🟥🟥🟥🟥🟥
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    const respuestaProcesada = procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); 
+
+//async con el await
+//🟩🟩🟩🟩🟩🟩🟩
+
+function ordernarProducto(producto) {
+  return new Promise((resolve, reject) => {
+    console.log(`Ordenando: ${producto} de freeCodeCamp.`);
+    setTimeout(() => {
+      if (producto === "taza") {
+        resolve("Ordenando una taza con el logo de freeCodeCamp...");
+      } else {
+        reject("Este producto no está disponible actualmente.");
+      }
+    }, 2000);
+  });
+}
+
+function procesarPedido(respuesta) {
+  return new Promise((resolve) => {
+    console.log("Procesando respuesta...");
+    console.log(`La respuesta fue: "${respuesta}"`);
+    setTimeout(() => {
+      resolve("Gracias por tu compra. Disfruta tu producto de freeCodeCamp.");
+    }, 4000);
+  });
+}
+
+//🟩🟩🟩🟩🟩🟩🟩
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = await ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    console.log(respuesta);
+    const respuestaProcesada = await procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); 
+
+try y catch
+-----------
+
+¿Qué es try(Intentar) y catch(Atrapar)?
+---------------------------------------
+
+try y catch son bloques de código en JavaScript que se utilizan para manejar errores de manera controlada.
+
+⚫try: Este bloque contiene el código que se desea ejecutar y que podría lanzar una excepción. Se utiliza para envolver el código que podría generar un error.
+⚫catch: Este bloque se ejecuta si se produce una excepción dentro del bloque try. Se utiliza para manejar el error y proporcionar una respuesta o solución al problema que ocurrió dentro del bloque try.
+
+Ej:
+
+async function realizarPedido(producto) {
+  try {
+    const respuesta = await ordernarProducto(producto);
+    console.log("Respuesta recibida");
+    console.log(respuesta);
+    const respuestaProcesada = await procesarPedido(respuesta);
+    console.log(respuestaProcesada);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+realizarPedido("taza"); // Entra al bloque try
+realizarPedido("lapiz"); // Entra al bloque catch
+
+💠HTTP y rutas en Node.js💠
+............................
+
+Modelo Cliente-Servidor
+-----------------------
+
+¿Qué es el Modelo Cliente-Servidor?
+-----------------------------------
+
+Es un modelo que usamos para acceder a internet y obtener recursos e información.
+
+¿Qué es un CLIENTE?
+-------------------
+
+Es el navegador desde el cual se realizan solicitudes a un servidor.
+
+¿Qué es un SERVIDOR?
+
+Es el programa que se ejecuta en un servidor físco para ofrecer un servicio al cliente. Envía información.
+
+Nota1🗒️: El servidor conoce el formato esperado del mensaje que envía el cliente.
+Nota2🗒️: El protocolo HTTP define el formato de los mensajes.
+
+¿Qué es un PROTOCOLO?
+---------------------
+
+Es un conjunto de reglas que permiten transmitir información entre los dispositivos de una red.
+
+¿Qué es HTTP(HyperText Transfer Protocol/Protocolo de Transferencia de HiperTexto)?
+-----------------------------------------------------------------------------------
+
+Es el protocolo de comunicación utilizado en la World Wide Web para la transferencia de datos entre clientes y servidores web.
+
+Solicitudes HTTP(request)
+-------------------------
+
+Se dividen en las siguientes solicitudes:
+🟢Métodos HTTP.
+🟢Camino(path).
+🟢Versión de HTTP.
+🟢Cabeceras(headers): Proveen información adicional sobre la solicitud.
+🟢Cuerpo(body): Contiene la información que debe ser enviada al servidor para procesar la solicitud.
+
+Nota🗒️: No se incluye en todas las solicitudes. Solo en aquellas que requieran enviar información. Por ejemplo: POST, PUT.
+
+Métodos HTTP
+------------
+
+¿Qué es un Método HTTP?
+-----------------------
+
+Es un verbo o sustantivo que indica la intención de la solicitud.
+
+Nota🗒️: Aunque también pueden ser sustantivos, frecuentemente se les denomina como "Verbos HTTP".
+
+LISTA DE SOLICITUDES:
+🟢GET: Verbo para solicitar un recurso específico. Ej: Un archivo HTML, CSS o una imagen.
+🟢POST: Verbo para crear un recurso específico. Ej: Agregar un usuario nuevo a una base de datos.
+🟢PUT: Verbo para modificar un recurso específico. Ej: Hacer un cambio en la base de datos.
+🟢DELETE: Verbo para eliminar un recurso específico. Ej: Eliminar un usuario de una base de datos.
+🟢Otros...
+
+Respuestas HTTP(response/Respuesta)
+-----------------------------------
+
+Se dividen en las siguientes respuestas:
+🟢Código de estado
+🟢Texto de estado
+🟢Versión de HTTP
+🟢Cabeceras(headers): Son opcionales y proveen información adicional sobre la respuesta.
+🟢Cuerpo(body): Contiene la información que debe ser enviada desde el servidor hacia el cliente.
+
+
+Códidos de Estado HTTP
+----------------------
+
+¿Qué es un Código de Estado HTTP?
+---------------------------------
+
+Es un número que indican si se ha completado exitosamente(O no) la solicitud HTTP. Las respuestas se agrupan en cinco clases:
+⚫Respuestas informativas(100-199).
+⚫Respuestas satisfactorias(200-299).
+⚫Redirecciones(300-399).
+⚫Errores de los clientes(400-499).
+⚫Errores de los servidores(500-599).
+
+Nota🗒️: Con Node.js y Express podemos especificar el código de estado de la respuesta HTTP en nuestro servidor.
+
+Contenidos de Datos Más Comunes
+-------------------------------
+
+🟢200 OK - La respuesta fue exitosa.
+🟢400 Bad Request - El servidor no pudo interpretar la solicitud.
+🟢404 Not Found - El servidor no pudo encontrar el recurso solicitado.
+🟢500 Internal Server Error - El servidor encontró una situación que no sabe cómo manejar.
+
+Módulo HTTP
+-----------
+
+¿Qué es un Módulo HTTP?
+-----------------------
+
+Este módulo le permite a Node.js transmitir información con el protocolo HTTP.
+
+¿Qué es un PUERTO?
+------------------
+
+Ubicación virtual del sistema operativo en la cual se puede acceder a una aplicación o a un proceso específico que se esté ejecutando en ese puerto.
+
+Ej:
+
+const http = require("http");
+
+const servidor = http.createServer((req, res) => {
+  // Proceso
+  console.log("Solicitud nueva");
+  res.end("Hola, mundo");
+});
+
+const PUERTO = 3000;
+
+servidor.listen(PUERTO, () => {
+  console.log(
+    `El servidor esta escuchando en el puerto http://localhost:${PUERTO}...`
+  );
+});
+
+req y res
+---------
+
+req y res son objetos utilizados en aplicaciones web con Node.js y Express, donde req representa la solicitud del cliente al servidor y res representa la respuesta del servidor al cliente.
+
+Ej: 
+
+const servidor = http.createServer((req, res) => { // Crea un servidor HTTP y define una función de callback que se ejecutará cada vez que se reciba una solicitud.
+  console.log("==> req (solicitud)");
+  console.log(req); // Imprime el objeto de solicitud (req), que contiene información sobre la solicitud del cliente.
+  console.log(req.url); // Imprime la URL solicitada por el cliente.
+  console.log(req.method); // Imprime el método HTTP utilizado en la solicitud (GET, POST, etc.).
+  console.log(req.headers); // Imprime los encabezados de la solicitud HTTP enviados por el cliente.
+  console.log(res); // Imprime el objeto de respuesta (res), que se utilizará para enviar una respuesta al cliente.
+  console.log(res.statusCode); // 200 OK // Imprime el código de estado de la respuesta actual (por defecto es 200 OK).
+  res.statusCode = 404; // Establece el código de estado de la respuesta a 404 (Not Found).
+  console.log(res.statusCode); // 404 Not Found // Imprime el nuevo código de estado de la respuesta.
+  res.setHeader("content-type", "application/json"); // Establece el encabezado "content-type" de la respuesta a "application/json".
+  console.log(res.getHeaders()); // Imprime los encabezados de la respuesta actual.
+  res.end("Hola, mundo :)"); // Envía una respuesta al cliente con el contenido "Hola, mundo :)" y finaliza la conexión.
+});
+
+
+Estructura de una URL
+---------------------
+
+¿Qué es una URL(Uniform Resource Locator/Localizador Uniforme de Recursos)?
+---------------------------------------------------------------------------
+
+Es una dirección de un recurso en la web.
+
+Ej: https://www.freecodecamp.org/espanol/
+     |       |       |        |       |
+     v       v       v	      v       v
+Protocolo Subdominio Dominio Dominio  Camino(Path)
+			     de Nivel
+			     Superior
+			     TLD(Top-Level Domain)
+
+Nota🗒️: Otros dominios de nivel superior pueden ser .com, .net, .int, .edu, .gov, entre otros.
+
+¿Qué es un SUBDOMINIO?
+----------------------
+
+Es la información adicional agregada al inicio del dominio de una página web.
+
+Nota🗒️: Permite a los sitios web organizar y separar la información para distintos propósitos.
+
+¿Qué es un DOMINIO?
+-------------------
+
+Referencia única a un sitio web en internet.
+
+¿Qué es un CAMINO(PATH)?
+------------------------
+
+Archivo o directorio en el servidor web.
+
+Nota🗒️: Puede tener parámetros para personalizarlo. Estos parámetros son parte de la URL.
+
+Tipos de Parámetros
+-------------------
+
+https://www.ejemplo.org/usuarios/14
+		       ............
+		          |										        
+			  v
+                     Parámetro de ruta
+
+			   Clave  Valor
+                              ^     ^
+			      |     |
+			      . ..............
+https://www.google.com/search?q=cursos+de+node
+			      ................
+			     	    |
+			     	    v
+		     	     Parámetros query
+
+¿Qué son los PARÁMETROS QUERY(QUERY STRING)?
+--------------------------------------------
+
+Son parámetros usados para contener contenido dinámico. Por ejemplo, filtrar una lista de recursos.
+
+Nota🗒️: También se les conoce como "query string".
+
+Ej: https://www.ejemplo.org/search?categoria=programacion
+
+Varios Parámetros Query
+-----------------------
+
+Clave		Clave    Clase
+ ^		 ^        ^
+ |		 |        |
+ .               .        .
+?q=cursos+de+node&sourceid&chrome&ie=UTF-8
+  ............... ........ ...............
+         |           |          |
+         v           v          v
+       Valor       Valor       Valor
+
+Nota🗒️: Usamos parámetros query para filtrar solicitudes GET(Para obtener recursos específicos).
+
+Declaraciones para la URL
+-------------------------
+
+const miURL = new URL(
+  "https://www.ejemplo.org/cursos/programacion?ordenar=vistas&nivel=1"
+); // Nombre la URL
+
+console.log(miURL.protocol); // https:
+console.log(miURL.hostname); // www.ejemplo.org
+console.log(miURL.pathname); // cursos/programacion
+console.log(miURL.searchParams); // URLSearchParams { 'ordenar' => 'vistas', 'nivel' => '1' }
+console.log(typeof miURL.searchParams); // object
+console.log(miURL.searchParams.get("ordenar")); // vistas
+console.log(miURL.searchParams.get("nivel")); // 1
+
+Routing en Node.js
+------------------
+
+¿Qué es ROUTING?
+----------------
+
+Es un proceso para manejar las solicitudes del cliente en base a ciertos criterios. Estos criterios son:
+🟢El método de la solicitud HTTP: De está forma el servidor sabe qué tipo de operación se realizará.
+🟢El path(Camino) de la solicitud HTTP: De está forma el servidor sabe el recurso específico que se usará, modificar o eliminar.
+
+Ej: 
+
+//routingServer.js
+
+const http = require("http");
+const { infoCursos } = require("./cursos.js");
+
+const servidor = http.createServer((req, res) => {
+  const metodo = req.method;
+
+  switch (metodo) {
+    case "GET":
+      return manejarSolicitudGET(req, res);
+    case "POST":
+      return manejarSolicitudPOST(req, res);
+    default:
+      res.statusCode = 501;
+      console.log(
+        `El método no puede ser manejado por el servidor: ${method}...`
+      );
+      break;
+  }
+});
+
+function manejarSolicitudGET(req, res) {
+  const camino = req.url;
+
+  console.log(res.statusCode); // 200 OK
+
+  if (camino === "/") {
+    res.writeHead(400, { "Content-Type": "application/json" });
+    return res.end(
+      "Bienvenidos a mi primer servidor y API creados con Node.js"
+    );
+  } else if (camino === "/cursos") {
+    return res.end(JSON.stringify(infoCursos));
+  } else if (camino === "/cursos/programacion") {
+    return res.end(JSON.stringify(infoCursos.programacion));
+  } else if (camino === "/cursos/matematicas") {
+    return res.end(JSON.stringify(infoCursos.matematicas));
+  } else {
+    res.statusCode = 404;
+    return res.end("El recurso solicitado no existe...");
+  }
+}
+
+function manejarSolicitudPOST(req, res) {
+  const path = req.url;
+
+  if (path === "/cursos/programacion") {
+    let cuerpo = "";
+    req.on("data", (contenido) => {
+      cuerpo += contenido.toString();
+    });
+    req.on("end", () => {
+      console.log(cuerpo);
+      console.log(typeof cuerpo);
+
+      // Convertir a un objeto de JavaScript
+      cuerpo = JSON.parse(cuerpo);
+      console.log(typeof cuerpo);
+      console.log(cuerpo.titulo);
+      res.end("El servidor recibido una solicitud POST para /cursos/programacion");
+    });
+    //return res.end("El servidor recibido una solicitud POST para /cursos/programacion");
+  }
+}
+
+const PUERTO = 3000;
+
+servidor.listen(PUERTO, () => {
+  console.log(`El servidor esta escuchando en el puerto ${PUERTO}...`);
+});
+
+//cursos.js
+
+let infoCursos = {
+  programacion: [
+    {
+      id: 1,
+      titulo: "Aprende Python",
+      lenguaje: "python",
+      vistas: 15000,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Python intermedio",
+      lenguaje: "python",
+      vistas: 13553,
+      nivel: "intermedio",
+    },
+    {
+      id: 3,
+      titulo: "Aprende JavaScript",
+      lenguaje: "javascript",
+      vistas: 102223,
+      nivel: "basico",
+    },
+  ],
+  matematicas: [
+    {
+      id: 1,
+      titulo: "Aprende calculo",
+      tema: "calculo",
+      vistas: 12427,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Aprende Algebra",
+      tema: "algebra",
+      vistas: 15722,
+      nivel: "intermedio",
+    },
+  ],
+};
+
+module.exports.infoCursos = infoCursos;
+
+//index.http
+//Cursos
+
+GET http://localhost:3000/ HTTP/1.1
+
+###
+
+PUT http://localhost:3000/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+  "titulo": "Aprende Node.js"
+}
+
+💠Nodemon💠
+............
+
+¿Qué es Nodemon?
+----------------
+
+Es una herramienta que reinicia la aplicación de Node.js cuando detecta algún cambio.
+
+Nota🗒️: Servirá para que no tengamos que detener la ejecución de la aplicación.
+
+Cómo instalarlo
+---------------
+
+Para instalar Nodemon se usa el siguiente comando: npm install -g nodemon
+O si quieres, puedes instalarlo como dependencias de desarrollo: npm install --save-dev nodemon // Pero solo en tu proyecto, no en todos.
+
+Cómo ejecutarlo
+---------------
+Para ejercutar, se usa "nodemon" en lugar npm, pero en command prompt en lugar powershell: nodemon <tu aplicación>
+
+💠Express💠
+............
+
+Introdución a Express
+---------------------
+
+¿Qué es Express?
+----------------
+
+Es el framework web más popular de Node.js.
+
+Nota🗒️: Nos ayuda a desarrollar aplicación de Node.js
+
+Cómo instalarlo
+---------------
+
+En un ruta y dentro de una carpeta creada, escribes el siguiente comando en la terminal: npm install express 
+
+Nota🗒️: Se creará una carpeta llamado "node_modules", un archivo package-lock.json y en tu package.json agregado en dependencias.
+
+Ahora, para hacer un proyecto de Node tenga Express, se tienen que poner la siguiente sintaxis:
+
+//testExpress.js
+
+const express = require("express");
+const app = express();
+
+Características
+---------------
+🟢Routing
+🟢Enfocado en alto rendimiento
+🟢Nos permite desarrollar aplicaciones de Node.js más rápidamente con código más conciso.
+
+Conceptos Básicos
+-----------------
+
+¿Qué es CRUD(CREATE READ UPDATE DELETE/CREAR LEER ACTUALIZAR ELIMINAR)?
+-----------------------------------------------------------------------
+
+Es una acrónimo que representa las operaciones básicas que se pueden realizar con la información almacenada. Ej: DB, archivos, etc.
+
+Nota1🗒️: Son las operaciones que podemos realizar con una base de datos.
+Nota2🗒️: Su acrónimo se asocia a la solicitudes HTTP:
+🟢Create -> POST
+🟢Read -> GET
+🟢Update -> PUT
+🟢Delete -> DELETE
+
+¿Qué es una API(Application Programming Interface/Interfaz de Programación de Aplicaciones)?
+--------------------------------------------------------------------------------------------
+
+Tipo de interfaz de software que permite que dos o más programas se comuniquen entre sí.
+
+Nota1🗒️: Permite que un software ofrezca un servicio a otro software.
+Nota2🗒️: No es usada directamente por el usuario sino por el programador que usa la API para implementar su programa.
+
+¿Qué es REST(Representation State Transfer)?
+--------------------------------------------
+
+Es un estilo de arquitectura de software para sistemas hipermedia distribuidos como la World Wide Web.
+
+¿Qué es RESTful API?
+--------------------
+
+Es una API basada en REST.
+
+Parámetros de Rutas y Parámetros de Query
+-----------------------------------------
+
+🟢Parámetros de Rutas: Son Segmentos de la URL que permiten pasar datos específicos al servidor, generalmente utilizados para identificar recursos. Ej:
+
+//testExpress.js
+
+// Rutas
+// Página principal
+app.get("/", (req, res) => {
+  res.send("Mi primer servidor con Express. Cursos 💻.");
+});
+
+// API de cursos
+app.get("/api/cursos", (req, res) => {
+  res.json(infoCursos);
+});
+
+// Rutas de Programación
+app.use("/api/cursos/programacion", routerProgramacion);
+
+// Rutas de Matemáticas
+app.use("/api/cursos/matematicas", routerMatematicas);
+
+
+🟢Parámetros de Query: Datos opcionales adjuntados a una URL que se utilizan para filtrar, ordenar o limitar los resultados de una solicitud HTTP. Ej:
+
+//testExpress.js
+
+// GET lenguaje
+routerProgramacion.get("/:lenguaje", (req, res) => {
+  const lenguaje = req.params.lenguaje;
+  const resultados = programacion.filter(
+    (curso) => curso.lenguaje === lenguaje
+  );
+
+  if (resultados.length === 0) {
+    return res.status(204).send(`No se encontraron cursos de ${lenguaje}.`);
+    //return res.status(404).end();
+  }
+  
+  //Query vistas:
+  //🟥🟥🟥🟥🟥
+  //http://localhost:3000/api/cursos/programacion/python?ordenar=vistas
+  if(req.query.ordenar === "vistas") {
+    res.send(resultados.sort((a, b) => a.vistas - b.vistas)); // Permite ordenar una lista en base a un criterio.
+    //Ascendente(a.vistas - b.vistas)
+    //Descendente(b.vistas - a.vistas)
+  } else {
+    res.send(resultados)
+  }
+  
+  res.send(resultados);
+});
+
+
+Nota🗒️: Se pasan como pares clave-valor en la URL después del signo de interrogación.
+
+¿Qué son los Routers en Express?
+--------------------------------
+
+Son objetos que permiten organizar y modularizar las rutas y lógica de manejo de solicitudes HTTP en aplicaciones. Ej:
+
+//testExpress.js
+
+// Routers
+const routerProgramacion = require("./routers/programacion.js");
+const routerMatematicas = require("./routers/matematicas.js");
+
+//programacion.js
+
+const express = require("express");
+const { programacion } = require("../datos/cursos").infoCursos;
+const routerProgramacion = express.Router();
+
+//...
+
+module.exports = routerProgramacion
+
+//matematicas.js
+
+const express = require("express");
+const { matematicas } = require("../datos/cursos").infoCursos;
+const routerMatematicas = express.Router();
+
+//cursos.js
+
+let infoCursos = {
+  programacion: [
+    {
+      id: 1,
+      titulo: "Aprende Python",
+      lenguaje: "python",
+      vistas: 15000,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Python intermedio",
+      lenguaje: "python",
+      vistas: 13553,
+      nivel: "intermedio",
+    },
+    {
+      id: 3,
+      titulo: "Aprende JavaScript",
+      lenguaje: "javascript",
+      vistas: 102223,
+      nivel: "basico",
+    },
+  ],
+  matematicas: [
+    {
+      id: 1,
+      titulo: "Aprende calculo",
+      tema: "calculo",
+      vistas: 12427,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Aprende Algebra",
+      tema: "algebra",
+      vistas: 15722,
+      nivel: "intermedio",
+    },
+  ],
+};
+
+module.exports.infoCursos = infoCursos;
+
+
+¿Qué es Middleware?
+-------------------
+
+Es una capa de software que actúa como intermediario entre las aplicaciones y el sistema operativo o entre componentes de software.
+
+Nota🗒️: Permite realizar operaciones específicas antes, durante o después de manejar una solicitud en una aplicación Express.js.
+
+Funciones de Middleware
+-----------------------
+
+Las funciones middleware se ejecutan:
+🟢Después de recibir una solicitud.
+🟢Antes de enviar una respuesta.
+
+Nota🗒️: Tienen acceso al objeto de la solicitud, al objeto de la respuesta y a next(), una función que se llama para ejecutar el próximo middleware.
+
+
+¿Qué es .next()?
+----------------
+
+Es un método utilizado en iteradores para avanzar al siguiente elemento en la secuencia.
+
+¿Qué es .fetch()?
+-----------------
+
+Es un método de JavaScript utilizado para realizar solicitudes HTTP asíncronas desde el navegador o Node.js.
+
+Nota🗒️: Permite obtener recursos de un servidor web y manejar la respuesta de manera flexible utilizando promesas.
+
+¿Qué es .findIndex()?
+---------------------
+
+Método de los arrays que devuelve el índice del primer elemento que cumple una condición.
+
+¿Qué es .splice()?
+------------------
+
+Es un método de los arrays que cambia el contenido de un array eliminando, reemplazando o agregando elementos.
+
+¿Qué es Object.assing()?
+------------------------
+
+Es una función que copia los valores de todas las propiedades enumerables de uno o más objetos fuente a un objeto destino.
+
+Diferentes solicitudes entre GET, POST, PUT, PATCH Y DELETE
+-----------------------------------------------------------
+🟢GET: Utilizado para recuperar datos del servidor. No modifica datos en el servidor, solo obtiene información. Ej:
+
+//testExpress.js
+
+app.get("/", (req, res) => {
+  res.send("Mi primer servidor con Express. Cursos 💻.");
+});
+
+🟢POST: Utilizado para enviar datos al servidor para crear nuevos recursos. Se utiliza para enviar datos que pueden ser procesados y almacenados en el servidor. Ej:
+
+//programacion.js
+
+// POST
+routerProgramacion.post("/", (req, res) => {
+  let cursoNuevo = req.body;
+  programacion.push(cursoNuevo);
+  res.send(programacion);
+});
+
+##index.http
+
+POST http://localhost:3000/api/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 4,
+  "titulo": "Aprende Node.js",
+  "lenguaje": "javascript",
+  "vistas": 45676,
+  "nivel": "basico"
+}
+
+🟢PUT: Utilizado para enviar datos al servidor para actualizar recursos existentes. Reemplaza completamente los datos del recurso con los datos proporcionados. Ej:
+
+//programacion.js
+
+// PUT
+routerProgramacion.put("/:id", (req, res) => {
+  const cursoActualizado = req.body;
+  const id = req.params.id;
+
+  const indice = programacion.findIndex(curso => curso.id == id); 
+  
+  if(indice >= 0) {
+    programacion[indice] = cursoActualizado;
+  } else {
+    return res
+    .status(404)
+    .send("Not Found");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "titulo": "Python intermedio con proyectos",
+  "lenguaje": "python",
+  "vistas": 123996,
+  "nivel": "intermedio"
+}
+
+
+🟢PATCH: Similar a PUT, pero se utiliza para actualizar parcialmente un recurso existente en lugar de reemplazarlo completamente. Solo actualiza los campos específicos proporcionados. Ej:
+
+// PATCH
+routerProgramacion.patch("/:id", (req, res) => {
+  const infoActualizada = req.body;
+  const id = req.params.id;
+
+  const indice = programacion.findIndex(curso => curso.id == id);
+
+  if (indice >= 0) {
+    const cursoAModificar = programacion[indice];
+    Object.assign(cursoAModificar, infoActualizada);
+  } else {
+    res.status(400).send("Bad request");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+PATCH http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "titulo": "Python intermedio con proyectos",
+  "vistas": 123996
+}
+
+🟢DELETE: Utilizado para eliminar recursos existentes en el servidor. Se utiliza para eliminar datos o recursos específicos del servidor. Ej:
+
+// DELETE
+routerProgramacion.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  const indice = programacion.findIndex(curso => curso.id == id);
+  
+  if(indice >= 0) {
+    programacion.splice(indice, 1);
+  } else {
+    res.status(500).send("Internal Server Error");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+DELETE http://localhost:3000/api/cursos/programacion/1 HTTP/1.1

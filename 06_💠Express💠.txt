@@ -1,0 +1,357 @@
+💠Express💠
+............
+
+Introdución a Express
+---------------------
+
+¿Qué es Express?
+----------------
+
+Es el framework web más popular de Node.js.
+
+Nota🗒️: Nos ayuda a desarrollar aplicación de Node.js
+
+Cómo instalarlo
+---------------
+
+En un ruta y dentro de una carpeta creada, escribes el siguiente comando en la terminal: npm install express 
+
+Nota🗒️: Se creará una carpeta llamado "node_modules", un archivo package-lock.json y en tu package.json agregado en dependencias.
+
+Ahora, para hacer un proyecto de Node tenga Express, se tienen que poner la siguiente sintaxis:
+
+//testExpress.js
+
+const express = require("express");
+const app = express();
+
+Características
+---------------
+🟢Routing
+🟢Enfocado en alto rendimiento
+🟢Nos permite desarrollar aplicaciones de Node.js más rápidamente con código más conciso.
+
+Conceptos Básicos
+-----------------
+
+¿Qué es CRUD(CREATE READ UPDATE DELETE/CREAR LEER ACTUALIZAR ELIMINAR)?
+-----------------------------------------------------------------------
+
+Es una acrónimo que representa las operaciones básicas que se pueden realizar con la información almacenada. Ej: DB, archivos, etc.
+
+Nota1🗒️: Son las operaciones que podemos realizar con una base de datos.
+Nota2🗒️: Su acrónimo se asocia a la solicitudes HTTP:
+🟢Create -> POST
+🟢Read -> GET
+🟢Update -> PUT
+🟢Delete -> DELETE
+
+¿Qué es una API(Application Programming Interface/Interfaz de Programación de Aplicaciones)?
+--------------------------------------------------------------------------------------------
+
+Tipo de interfaz de software que permite que dos o más programas se comuniquen entre sí.
+
+Nota1🗒️: Permite que un software ofrezca un servicio a otro software.
+Nota2🗒️: No es usada directamente por el usuario sino por el programador que usa la API para implementar su programa.
+
+¿Qué es REST(Representation State Transfer)?
+--------------------------------------------
+
+Es un estilo de arquitectura de software para sistemas hipermedia distribuidos como la World Wide Web.
+
+¿Qué es RESTful API?
+--------------------
+
+Es una API basada en REST.
+
+Parámetros de Rutas y Parámetros de Query
+-----------------------------------------
+
+🟢Parámetros de Rutas: Son Segmentos de la URL que permiten pasar datos específicos al servidor, generalmente utilizados para identificar recursos. Ej:
+
+//testExpress.js
+
+// Rutas
+// Página principal
+app.get("/", (req, res) => {
+  res.send("Mi primer servidor con Express. Cursos 💻.");
+});
+
+// API de cursos
+app.get("/api/cursos", (req, res) => {
+  res.json(infoCursos);
+});
+
+// Rutas de Programación
+app.use("/api/cursos/programacion", routerProgramacion);
+
+// Rutas de Matemáticas
+app.use("/api/cursos/matematicas", routerMatematicas);
+
+
+🟢Parámetros de Query: Datos opcionales adjuntados a una URL que se utilizan para filtrar, ordenar o limitar los resultados de una solicitud HTTP. Ej:
+
+//testExpress.js
+
+// GET lenguaje
+routerProgramacion.get("/:lenguaje", (req, res) => {
+  const lenguaje = req.params.lenguaje;
+  const resultados = programacion.filter(
+    (curso) => curso.lenguaje === lenguaje
+  );
+
+  if (resultados.length === 0) {
+    return res.status(204).send(`No se encontraron cursos de ${lenguaje}.`);
+    //return res.status(404).end();
+  }
+  
+  //Query vistas:
+  //🟥🟥🟥🟥🟥
+  //http://localhost:3000/api/cursos/programacion/python?ordenar=vistas
+  if(req.query.ordenar === "vistas") {
+    res.send(resultados.sort((a, b) => a.vistas - b.vistas)); // Permite ordenar una lista en base a un criterio.
+    //Ascendente(a.vistas - b.vistas)
+    //Descendente(b.vistas - a.vistas)
+  } else {
+    res.send(resultados)
+  }
+  
+  res.send(resultados);
+});
+
+
+Nota🗒️: Se pasan como pares clave-valor en la URL después del signo de interrogación.
+
+¿Qué son los Routers en Express?
+--------------------------------
+
+Son objetos que permiten organizar y modularizar las rutas y lógica de manejo de solicitudes HTTP en aplicaciones. Ej:
+
+//testExpress.js
+
+// Routers
+const routerProgramacion = require("./routers/programacion.js");
+const routerMatematicas = require("./routers/matematicas.js");
+
+//programacion.js
+
+const express = require("express");
+const { programacion } = require("../datos/cursos").infoCursos;
+const routerProgramacion = express.Router();
+
+//...
+
+module.exports = routerProgramacion
+
+//matematicas.js
+
+const express = require("express");
+const { matematicas } = require("../datos/cursos").infoCursos;
+const routerMatematicas = express.Router();
+
+//cursos.js
+
+let infoCursos = {
+  programacion: [
+    {
+      id: 1,
+      titulo: "Aprende Python",
+      lenguaje: "python",
+      vistas: 15000,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Python intermedio",
+      lenguaje: "python",
+      vistas: 13553,
+      nivel: "intermedio",
+    },
+    {
+      id: 3,
+      titulo: "Aprende JavaScript",
+      lenguaje: "javascript",
+      vistas: 102223,
+      nivel: "basico",
+    },
+  ],
+  matematicas: [
+    {
+      id: 1,
+      titulo: "Aprende calculo",
+      tema: "calculo",
+      vistas: 12427,
+      nivel: "basico",
+    },
+    {
+      id: 2,
+      titulo: "Aprende Algebra",
+      tema: "algebra",
+      vistas: 15722,
+      nivel: "intermedio",
+    },
+  ],
+};
+
+module.exports.infoCursos = infoCursos;
+
+
+¿Qué es Middleware?
+-------------------
+
+Es una capa de software que actúa como intermediario entre las aplicaciones y el sistema operativo o entre componentes de software.
+
+Nota🗒️: Permite realizar operaciones específicas antes, durante o después de manejar una solicitud en una aplicación Express.js.
+
+Funciones de Middleware
+-----------------------
+
+Las funciones middleware se ejecutan:
+🟢Después de recibir una solicitud.
+🟢Antes de enviar una respuesta.
+
+Nota🗒️: Tienen acceso al objeto de la solicitud, al objeto de la respuesta y a next(), una función que se llama para ejecutar el próximo middleware.
+
+
+¿Qué es .next()?
+----------------
+
+Es un método utilizado en iteradores para avanzar al siguiente elemento en la secuencia.
+
+¿Qué es .fetch()?
+-----------------
+
+Es un método de JavaScript utilizado para realizar solicitudes HTTP asíncronas desde el navegador o Node.js.
+
+Nota🗒️: Permite obtener recursos de un servidor web y manejar la respuesta de manera flexible utilizando promesas.
+
+¿Qué es .findIndex()?
+---------------------
+
+Método de los arrays que devuelve el índice del primer elemento que cumple una condición.
+
+¿Qué es .splice()?
+------------------
+
+Es un método de los arrays que cambia el contenido de un array eliminando, reemplazando o agregando elementos.
+
+¿Qué es Object.assing()?
+------------------------
+
+Es una función que copia los valores de todas las propiedades enumerables de uno o más objetos fuente a un objeto destino.
+
+Diferentes solicitudes entre GET, POST, PUT, PATCH Y DELETE
+-----------------------------------------------------------
+🟢GET: Utilizado para recuperar datos del servidor. No modifica datos en el servidor, solo obtiene información. Ej:
+
+//testExpress.js
+
+app.get("/", (req, res) => {
+  res.send("Mi primer servidor con Express. Cursos 💻.");
+});
+
+🟢POST: Utilizado para enviar datos al servidor para crear nuevos recursos. Se utiliza para enviar datos que pueden ser procesados y almacenados en el servidor. Ej:
+
+//programacion.js
+
+// POST
+routerProgramacion.post("/", (req, res) => {
+  let cursoNuevo = req.body;
+  programacion.push(cursoNuevo);
+  res.send(programacion);
+});
+
+##index.http
+
+POST http://localhost:3000/api/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 4,
+  "titulo": "Aprende Node.js",
+  "lenguaje": "javascript",
+  "vistas": 45676,
+  "nivel": "basico"
+}
+
+🟢PUT: Utilizado para enviar datos al servidor para actualizar recursos existentes. Reemplaza completamente los datos del recurso con los datos proporcionados. Ej:
+
+//programacion.js
+
+// PUT
+routerProgramacion.put("/:id", (req, res) => {
+  const cursoActualizado = req.body;
+  const id = req.params.id;
+
+  const indice = programacion.findIndex(curso => curso.id == id); 
+  
+  if(indice >= 0) {
+    programacion[indice] = cursoActualizado;
+  } else {
+    return res
+    .status(404)
+    .send("Not Found");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "titulo": "Python intermedio con proyectos",
+  "lenguaje": "python",
+  "vistas": 123996,
+  "nivel": "intermedio"
+}
+
+
+🟢PATCH: Similar a PUT, pero se utiliza para actualizar parcialmente un recurso existente en lugar de reemplazarlo completamente. Solo actualiza los campos específicos proporcionados. Ej:
+
+// PATCH
+routerProgramacion.patch("/:id", (req, res) => {
+  const infoActualizada = req.body;
+  const id = req.params.id;
+
+  const indice = programacion.findIndex(curso => curso.id == id);
+
+  if (indice >= 0) {
+    const cursoAModificar = programacion[indice];
+    Object.assign(cursoAModificar, infoActualizada);
+  } else {
+    res.status(400).send("Bad request");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+PATCH http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "titulo": "Python intermedio con proyectos",
+  "vistas": 123996
+}
+
+🟢DELETE: Utilizado para eliminar recursos existentes en el servidor. Se utiliza para eliminar datos o recursos específicos del servidor. Ej:
+
+// DELETE
+routerProgramacion.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  const indice = programacion.findIndex(curso => curso.id == id);
+  
+  if(indice >= 0) {
+    programacion.splice(indice, 1);
+  } else {
+    res.status(500).send("Internal Server Error");
+  }
+  res.send(programacion);
+});
+
+##index.http
+
+DELETE http://localhost:3000/api/cursos/programacion/1 HTTP/1.1

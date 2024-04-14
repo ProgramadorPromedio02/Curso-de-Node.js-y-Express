@@ -1,0 +1,155 @@
+💠Módulo en Node.js y el Primer Programa💠
+..........................................
+
+¿Qué es un MÓDULO?
+------------------
+
+Funcionalidad organizada en uno o varios archivos JavaScript que puede ser reutilizada en una aplicación.
+
+VENTAJAS
+--------
+
+🟢Evitar repetición del código.
+🟢Reutilizar el código.
+🟢Es más fácil encontrar y corregir "bugs".
+🟢Es más fácil modificar el código.
+🟢Es más fácil agregar nueva funcionalidad.
+
+Importar(un módulo)
+-------------------
+
+Darle acceso a funciones y elementos definidos en otro módulo.
+
+Nota: Para importar un elemento a un módulo debemos exportarlo desde otro módulo.
+
+Módulos Principales de Node.js
+..............................
+
+Módulos Built-in
+----------------
+
+¿Qué es un MÓDULO BUILT-IN(INCORPORADOS)?
+-----------------------------------------
+
+Módulos que puedes usar directamente al trabajo con Node.js(sin instalarlos). Muy útiles para realizar tareas comunes al trabajar con Node.js. Algunos son:
+🟢http
+🟢https
+🟢fs(file system)
+🟢os(operating system)
+🟢path
+
+MUCHOS MÁS...
+
+Módulo Console
+--------------
+
+¿Qué es CONSOLE?
+----------------
+
+Módulo built-in que implementa funcionalidad similar a la consola de un navegador web.
+
+Métodos Útiles
+--------------
+
+🟢console.log()
+🟢console.warn()
+🟢console.error()
+🟢console.assert()
+🟢console.table()
+
+Módulo Process
+--------------
+
+¿Qué es MÓDULO PROCESS?
+-----------------------
+
+Provee imformación sobre el proceso de Node.js que se está ejecutando. También puede tener cierto control sobre el proceso.
+
+Módulo OS(Operating System/Operación del Sistema)
+-------------------------------------------------
+
+Contiene funcionalidad para obtener información sobre el sistema operativo en el cual se ejecuta la aplicación.
+
+Módulo Timers
+-------------
+
+Timer: Temporizador
+
+Contiene funciones que ejecutan código luego de un cierto periodo de tiempo.
+
+Funciones Útiles
+----------------
+
+🟢setTimeout()
+🟢setImmediate()
+🟢setInterval()
+
+setTimeout()
+------------
+
+Es una función para ejecutar código luego de un número específico de milisegundos(1 segundo = 1000 milisegundos).
+Ej: setTimeout(funcion, retraso, argumento);
+Ej2: setTimeout(funcion, retraso, argumento1, argumento2);
+
+Higher-Order-Programming(Programación de Orden Superior)
+--------------------------------------------------------
+
+Es un estilo de programación informática que utiliza componentes de software, como funciones, módulos u objetos, como valores.
+
+setImmediate()
+--------------
+
+Es una función para ejecutar código asíncrono en la próxima iteración del ciclo de eventos(lo más pronto posible).
+Ej: setImmediate(funcion, argumento1, argumento2);
+
+Nota1🗒️: Se ejecuta después del código síncrono.
+Nota2🗒️: Se ejecuta lo más rápido posible de forma asíncrona.
+
+setInterval()
+-------------
+
+Es una función para ejecutar código un infinito de veces con un retraso específico de milisegundos.
+Ej: setInterval(funcion, intervalo, arg1, arg2);
+
+Módulo fs(File System/Sistema de Archivos)
+------------------------------------------
+
+Módulo que contiene funcionalidad muy útil para trabajar con el sistema de archivos. 
+
+Operaciones Útiles
+------------------
+
+🟢Leer                     |
+🟢Modificar                |			
+🟢Copiar                   | Archivo
+🟢Eliminar                 |
+🟢Cambiar nombre           |
+
+Nota🗒️: Todos los métodos de este módulo son asíncronos por defecto. Pero puedes escoger versiones síncronas de estos métodos, agregando Sync(Synchronous) a sus nombres.
+
+Diferencias entre Asíncrono y Síncrono del Módulo fs
+----------------------------------------------------
+
+⚫ fs.rename() //Asíncrono
+⚫ fs.renameSync() //Síncrono
+
+Archivo de prueba📁:
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js</title>
+</head>
+
+<body>
+    <h1>freeCodeCamp</h1>
+    <p>Estoy aprendiendo Node.js</p>
+</body>
+
+</html><!--<p>Hola</p>-->
+
+<!--Nueva etiquta-->
+<p>Hola</p>

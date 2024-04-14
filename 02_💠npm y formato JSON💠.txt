@@ -1,0 +1,144 @@
+💠npm y el formato JSON💠
+.........................
+
+Introducción a npm
+------------------
+
+¿Qué es npm?
+------------
+
+Es el archivo de software más grande del mundo que contiene paquetes que puedes instalar y usar con Node.js.
+
+Nota🗒️: También es una herramienta para la línea de comandos.
+
+¿Qué es un Paquete?
+-------------------
+
+Archivo o directorio descrito por un archivo packege.json. Puede ser publicado en el registro de npm.
+
+¿Qué es Módulo?
+---------------
+
+Es cualquier archivo o directorio en el directorio node_modules que puede ser importado con require().
+
+Nota1🗒️: Para poder incluir un módulo con require(), debe ser un archivo JS. Una carpeta con un archivo package.json que contiene un propiedad "main".
+Nota2🗒️: Solo los módulos que tienen un archivo package.json son paquetes.
+
+¿Qué es una Dependencia?
+
+Es un paquete que otro paquete necesita para que pueda funcionar correctamente.
+
+Crear paquete con npm con init(initialize)
+------------------------------------------
+
+✖️comandos✖️: 
+  ⚫npm init: Creas y configuras tu package.json.
+  ⚫npm init --yes: Creas directamente tu package.json por defecto.
+
+Introducción al formato JSON(JavaSript Object Notation)
+-------------------------------------------------------
+
+¿Qué es JSON?
+-------------
+
+Es un formato de texto usado para almacenar y transportar información.
+
+Nota1🗒️: JSON está basado en la notación de objetos de JavaScript pero es solo texto.
+Nota2🗒️: Nos permite almacenar objetos de JavaScript como texto.
+Nota3🗒️: Es independiente del lenguaje de programación con el cual estás trabajando.
+
+
+Características del Formato JSON
+--------------------------------
+
+🟢Los datos se representan como pares clave-valor(propiedades).
+
+{
+  "titulo": "Aprende Node.js",
+  "numVistas": 45642,
+  "numLikes": 21123,
+  "temas": [
+    "JavaScript",
+    "Node.js"
+  ],
+  "esPublico": true
+}
+
+🟢Están rodeados por dos llaves principales {}.
+
+Nota🗒️: También puede estar rodeado por [], si es un arreglo JSON.
+
+🟢Los pares deben estar separados por un coma ,.
+
+🟢Puede contener:
+  🟢Cadenas de caracteres.
+  🟢Números.
+  🟢Arreglos(arrays).
+  🟢Valores Booleanos(true/false).
+  🟢Objetos.
+
+✖️Síntaxis✖️
+  ⚫JSON.parse(): Convierte una cadena de texto JSON en un objeto JavaScript.
+  ⚫JSON.stringify: Convierte un objeto JavaScript en una cadena de texto JSON.
+  
+  Nota🗒️: Esto es útil para serializar datos y enviarlos a través de una red o almacenarlos en un archivo.
+
+Instalar y Desinstalar Paquetes con npm
+---------------------------------------
+
+✖️comandos✖️: 
+ ⚫npm install express : Instala los módulos de express en tu carpeta.
+ ⚫npm uninstall express : Desinstala los módulos de express en tu carpeta.
+
+Nota🗒️: Para instalar dependencias: npm install(todas las dependencias)
+
+Instalar cualquier versión de express
+-------------------------------------
+ 
+ Para instalar una versión específica de Express, debemos usar la sintaxis npm install express@4.15.1, donde @4.15.1 indica la versión que deseamos instalar.
+Ej: npm install express@4.15.1
+
+Nota🗒️: Esto asegura que npm instale la versión exacta especificada del paquete.
+
+devDependencies en el package.json
+----------------------------------
+
+Para agregar una dependencia como una dependencia de desarrollo en el archivo package.json, usamos el comando:
+
+✖️comando✖️: npm install express --save-dev
+
+Nota1🗒️: Este comando instalará la dependencia 'express' y la guardará en la sección 'devDependencies' del archivo package.json. 
+Nota2🗒️: Estas dependencias son necesarias para el desarrollo del proyecto, pero no son necesarias para su funcionamiento en producción.
+
+package-lock.json
+-----------------
+
+Se genera automáticamente cuando npm modifica el árbol de node_modules o package.json.
+
+Nota1🗒️: Describe el árbol generado para que futuras instalaciones puedan generar exactamente el mismo árbol.
+Nota2🗒️: Otros desarrolladores pueden instalar exactamente las mismas dependencias.
+
+🟢name🟢
+--------
+
+El nombre del paquete. Es el mismo nombre que incluimos en package.json.
+
+🟢version🟢
+-----------
+
+La version del paquete. Es la misma versión que incluimos en package.json.
+
+🟢lockfileVersion🟢
+-------------------
+
+Describe la versión del archivo package-lock.json.
+
+🟢require🟢
+-----------
+
+Es una función que se puede usar para importar símbolos desde otro módulo al ámbito actual.
+
+🟢packages🟢
+------------
+
+Es un objeto que asocia la ubicación de cada paquete con un objeto que contiene información sobre ese paquete.

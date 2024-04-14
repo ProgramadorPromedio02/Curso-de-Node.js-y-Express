@@ -1,0 +1,120 @@
+Node.js
+
+💠Introducción💠
+................
+
+¿Qué es NODEJS?
+---------------
+
+Entorno de ejecución de JavaScript orientado a eventos asíncronos.
+
+¿Qué es un ENTORNO DE EJECUCIÓN?
+--------------------------------
+
+Entorno(infraestructura) en el cual se ejecuta un programa o aplicación.
+
+¿Qué es un EVENTO ASÍNCRONO?
+----------------------------
+
+Evento que se ejecuta independientemente del proceso principal de la aplicación.
+
+Ej: Obtener información de una base de datos.
+
+¿Qué es un EVENTO SÍNCRONO?
+---------------------------
+
+Evento que se ejecuta como parte del proceso principal de la aplicación.
+
+Características de NODEJS
+-------------------------
+
+🟢Open-Source(Código abierto).
+🟢Multiplataforma.
+🟢Basado en el motor V8 de Google.
+
+¿Qué es el MOTOR V8?
+--------------------
+
+Motor de JavaScript desarrollado por el Chromium Project para Google Chrome.
+
+¿Qué es un MOTOR DE JAVASCRIPT?
+-------------------------------
+
+Software que ejecuta código de JavaScript.
+
+CONCEPTOS BÁSICOS
+.................
+
+Arquitectura cliente-servidor
+-----------------------------
+
+Modelo en el cual el servidor envía recursos al dispositivo que lo solicita(cliente).
+
+Desarrollo front-end
+--------------------
+
+Es un área del desarrollo web que se encarga del desarrollo de los componentes que ve el usuario y con los cuales interactúa.
+
+Desarrollo back-end
+-------------------
+
+Es un área del desarrollo web que se encarga del desarrollo de los servidores y bases de datos.
+
+Protocolo
+---------
+
+Reglas que permiten que dos entiedades de una red se comuniquen.
+
+Ej: Protocolo HTTP
+
+Base de Datos
+-------------
+
+Conjunto de datos estructurados sobre un mismo contexto que se pueden consultar.
+
+Página Web Estática y Dinámica
+------------------------------
+
+Estáticas: muestran contenido fijo sin cambios, ideales para información estática . Ej: Portfolios.
+Dinámicas: se generan en tiempo real, adaptándose a la interacción del usuario. Ej: tiendas en línea o redes sociales.
+
+Conceptos
+---------
+
+🟢Arquitectura cliente-servidor
+🟢Desarrollo front-end y back-end
+🟢Protocolo
+🟢Base de Datos
+🟢Página Web Estática y Dinámica
+
+Aplicaciones de Node.js
+-----------------------
+
+Node.js es usado para:
+⚫Desarrollo back-end
+⚫Desarrollar APIs
+
+//API(Application Programming Inferface/Interfaz de Programación de Aplicaciones)
+
+Node.js permite desarrollar aplicaciones escalables(Scalable) y de tiempo real(Real-Time).
+
+Escalable
+---------
+
+Su rendimiento se puede adaptar a medida que crece el uso de la aplicación y recibe más solicitudes.
+
+Aplicación en Tiempo Real
+-------------------------
+
+Establece una conexión bidireccional y dinámica entre el servidor y el cliente. Analiza los eventos que ocurren y reacciona de forma casi inmediata.
+
+Node.js NO es:
+🟢Lenguaje de programación
+🟢Framework
+🟢Librería(Biblioteca)
+
+Node.js es:
+Un entorno de ejecución
+
+Node.js ejecuta: JavaScript
+

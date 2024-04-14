@@ -1,0 +1,19 @@
+💠Nodemon💠
+............
+
+¿Qué es Nodemon?
+----------------
+
+Es una herramienta que reinicia la aplicación de Node.js cuando detecta algún cambio.
+
+Nota🗒️: Servirá para que no tengamos que detener la ejecución de la aplicación.
+
+Cómo instalarlo
+---------------
+
+Para instalar Nodemon se usa el siguiente comando: npm install -g nodemon
+O si quieres, puedes instalarlo como dependencias de desarrollo: npm install --save-dev nodemon // Pero solo en tu proyecto, no en todos.
+
+Cómo ejecutarlo
+---------------
+Para ejercutar, se usa "nodemon" en lugar npm, pero en command prompt en lugar powershell: nodemon <tu aplicación>
